@@ -1,0 +1,121 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import ProjectCard from '@/components/ui/ProjectCard';
+import { Project } from '@/lib/projects';
+
+interface ProjectsContentProps {
+  projects: Project[];
+}
+
+export default function ProjectsContent({ projects }: ProjectsContentProps) {
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
+  const [activeFilter, setActiveFilter] = useState<'all' | Project['status']>('all');
+
+  useEffect(() => {
+    if (activeFilter === 'all') {
+      setFilteredProjects(projects);
+    } else {
+      setFilteredProjects(projects.filter(project => project.status === activeFilter));
+    }
+  }, [activeFilter, projects]);
+
+  const getFilterCount = (status: 'all' | Project['status']) => {
+    if (status === 'all') return projects.length;
+    return projects.filter(project => project.status === status).length;
+  };
+
+  const filters = [
+    { key: 'all' as const, label: 'All', count: getFilterCount('all') },
+    { key: 'live' as const, label: 'Live', count: getFilterCount('live') },
+    { key: 'in-development' as const, label: 'In Development', count: getFilterCount('in-development') },
+    { key: 'done' as const, label: 'Done', count: getFilterCount('done') },
+  ];
+
+  return (
+    <>
+      {/* Header */}
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            My Projects
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            A collection of software projects I&apos;ve built, ranging from full-stack applications 
+            to system programming and algorithmic implementations. Each project represents 
+            a unique challenge and learning experience.
+          </p>
+        </div>
+      </section>
+
+      {/* Filters */}
+      <section className="pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4">
+            {filters.map((filter) => (
+              <button
+                key={filter.key}
+                onClick={() => setActiveFilter(filter.key)}
+                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+                  activeFilter === filter.key
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                {filter.label}
+                <span className="ml-2 text-sm opacity-75">
+                  ({filter.count})
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Grid */}
+      <section className="pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {filteredProjects.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <div className="text-gray-400 text-6xl mb-4">📂</div>
+              <h3 className="text-xl font-medium text-gray-900 mb-2">
+                No projects found
+              </h3>
+              <p className="text-gray-600">
+                {activeFilter === 'all' 
+                  ? "I haven&apos;t added any projects yet." 
+                  : `No projects with "${filters.find(f => f.key === activeFilter)?.label}" status.`
+                }
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Interested in Working Together?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            I&apos;m always excited to take on new challenges and collaborate on interesting projects.
+          </p>
+          <a
+            href="mailto:johnruge@uchicago.edu"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+          >
+            Let&apos;s Talk
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+    </>
+  );
+} 
