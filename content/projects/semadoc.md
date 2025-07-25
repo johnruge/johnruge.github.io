@@ -45,4 +45,4 @@ The tool serves various documentation needs:
 - Meeting notes and summaries
 - Technical specification writing
 
-This project showcases the practical application of AI in software development workflows, demonstrating how LLMs can be effectively integrated into enterprise tools to solve real-world productivity challenges. 
+This project showcases the practical application of AI in software development workflows, demonstrating how LLMs can be effectively integrated into enterprise tools to solve real-world productivity challenges.

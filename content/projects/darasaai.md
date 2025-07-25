@@ -26,4 +26,4 @@ The application follows a monolithic architecture using Spring Boot, providing a
 
 ## Impact
 
-This system enables educational institutions to manage their academic content efficiently, providing a centralized platform for course management, student assessment, and educational resource distribution. 
+This system enables educational institutions to manage their academic content efficiently, providing a centralized platform for course management, student assessment, and educational resource distribution.

@@ -92,71 +92,69 @@ export default function ResumePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <NavBar />
-      
-      <main className="pt-32 pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <main className="pt-32 pb-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <header className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">John Rugemalila</h1>
-                <p className="text-xl text-gray-600 mb-4">Computer Science Student & Software Developer</p>
-                
-                <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <Phone size={16} />
-                    <span>+1 773-406-6328</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Mail size={16} />
-                    <a href="mailto:johnruge@uchicago.edu" className="hover:text-blue-600">
-                      johnruge@uchicago.edu
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <ExternalLink size={16} />
-                    <a href="https://linkedin.com/in/john-rugemalila" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-                      linkedin.com/in/john-rugemalila
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <ExternalLink size={16} />
-                    <a href="https://github.com/johnruge" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-                      github.com/johnruge
-                    </a>
-                  </div>
-                </div>
+          <header className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 text-center shadow-sm">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">John Rugemalila</h1>
+            <p className="text-2xl text-gray-600 mb-8">Computer Science Student & Software Developer</p>
+
+            <div className="flex flex-wrap justify-center gap-8 text-gray-600 mb-8">
+              <div className="flex items-center gap-2">
+                <Phone size={20} />
+                <span className="text-lg">+1 773-406-6328</span>
               </div>
-              
-              <div className="md:text-right">
-                <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                  <Download size={20} />
-                  Download PDF
-                </button>
+              <div className="flex items-center gap-2">
+                <Mail size={20} />
+                <a href="mailto:johnruge@uchicago.edu" className="hover:text-blue-600 text-lg">
+                  johnruge@uchicago.edu
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <ExternalLink size={20} />
+                <a href="https://linkedin.com/in/john-rugemalila" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 text-lg">
+                  LinkedIn
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <ExternalLink size={20} />
+                <a href="https://github.com/johnruge" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 text-lg">
+                  GitHub
+                </a>
               </div>
             </div>
+
+            <a
+              href="/johnruge_resume.pdf"
+              download
+              className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-colors text-lg"
+            >
+              <Download size={24} />
+              Download PDF
+            </a>
           </header>
 
           {/* Education */}
-          <section className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Education</h2>
-            <div className="space-y-4">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">{education.degree}</h3>
-                  <p className="text-gray-600">{education.school}</p>
-                  <p className="text-sm text-gray-500 mt-1">
+          <section className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 shadow-sm">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Education</h2>
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                <div className="mb-4 lg:mb-0">
+                  <h3 className="text-2xl font-bold text-gray-900">{education.degree}</h3>
+                  <p className="text-xl text-gray-600 mb-2">{education.school}</p>
+                  <p className="text-gray-500">
                     <strong>Relevant coursework:</strong> {education.coursework}
                   </p>
                 </div>
-                <div className="mt-2 md:mt-0 text-sm text-gray-600 md:text-right">
-                  <div className="flex items-center gap-2 md:justify-end">
-                    <Calendar size={16} />
-                    <span>{education.period}</span>
+                <div className="text-gray-600 lg:text-right">
+                  <div className="flex items-center gap-2 lg:justify-end mb-2">
+                    <Calendar size={20} />
+                    <span className="text-lg">{education.period}</span>
                   </div>
-                  <div className="flex items-center gap-2 md:justify-end mt-1">
-                    <MapPin size={16} />
-                    <span>{education.location}</span>
+                  <div className="flex items-center gap-2 lg:justify-end">
+                    <MapPin size={20} />
+                    <span className="text-lg">{education.location}</span>
                   </div>
                 </div>
               </div>
@@ -164,34 +162,34 @@ export default function ResumePage() {
           </section>
 
           {/* Skills */}
-          <section className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Skills</h2>
-            <div className="space-y-6">
+          <section className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 shadow-sm">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Skills</h2>
+            <div className="space-y-10">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Languages</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Languages</h3>
+                <div className="flex flex-wrap justify-center gap-4">
                   {skills.languages.map((skill) => (
-                    <span key={skill} className="px-3 py-2 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium">
+                    <span key={skill} className="px-4 py-3 bg-blue-50 text-blue-800 border border-blue-200 rounded-xl font-medium text-lg">
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Frameworks & Libraries</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Frameworks & Libraries</h3>
+                <div className="flex flex-wrap justify-center gap-4">
                   {skills.frameworks.map((skill) => (
-                    <span key={skill} className="px-3 py-2 bg-green-100 text-green-800 rounded-lg text-sm font-medium">
+                    <span key={skill} className="px-4 py-3 bg-green-50 text-green-800 border border-green-200 rounded-xl font-medium text-lg">
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Tools & Platforms</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Tools & Platforms</h3>
+                <div className="flex flex-wrap justify-center gap-4">
                   {skills.tools.map((skill) => (
-                    <span key={skill} className="px-3 py-2 bg-purple-100 text-purple-800 rounded-lg text-sm font-medium">
+                    <span key={skill} className="px-4 py-3 bg-purple-50 text-purple-800 border border-purple-200 rounded-xl font-medium text-lg">
                       {skill}
                     </span>
                   ))}
@@ -201,42 +199,41 @@ export default function ResumePage() {
           </section>
 
           {/* Experience */}
-          <section className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Experience</h2>
-            <div className="space-y-8">
+          <section className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 shadow-sm">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Experience</h2>
+            <div className="space-y-12">
               {experiences.map((exp, index) => (
-                <div key={index} className="relative">
+                <div key={index} className="relative pl-8">
                   {index < experiences.length - 1 && (
-                    <div className="absolute left-0 top-8 w-px h-full bg-gray-200"></div>
+                    <div className="absolute left-2 top-12 w-px h-full bg-gray-200"></div>
                   )}
-                  <div className="flex gap-4">
-                    <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 relative z-10"></div>
-                    <div className="flex-1">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900">{exp.title}</h3>
-                          <p className="text-gray-600 flex items-center gap-2">
-                            <Building size={16} />
-                            {exp.company}
-                          </p>
+                  <div className="absolute left-0 top-4 w-4 h-4 bg-blue-600 rounded-full"></div>
+
+                  <div className="mb-6">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">{exp.title}</h3>
+                        <p className="text-xl text-gray-600 flex items-center gap-2 mt-1">
+                          <Building size={18} />
+                          {exp.company}
+                        </p>
+                      </div>
+                      <div className="text-gray-600 lg:text-right mt-2 lg:mt-0">
+                        <div className="flex items-center gap-2 lg:justify-end mb-1">
+                          <Calendar size={18} />
+                          <span className="text-lg">{exp.period}</span>
                         </div>
-                        <div className="text-sm text-gray-600 md:text-right mt-1 md:mt-0">
-                          <div className="flex items-center gap-2 md:justify-end">
-                            <Calendar size={16} />
-                            <span>{exp.period}</span>
-                          </div>
-                          <div className="flex items-center gap-2 md:justify-end mt-1">
-                            <MapPin size={16} />
-                            <span>{exp.location}</span>
-                          </div>
+                        <div className="flex items-center gap-2 lg:justify-end">
+                          <MapPin size={18} />
+                          <span className="text-lg">{exp.location}</span>
                         </div>
                       </div>
-                      <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                        {exp.description.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
                     </div>
+                    <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg leading-relaxed ml-4">
+                      {exp.description.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
@@ -244,14 +241,14 @@ export default function ResumePage() {
           </section>
 
           {/* Projects */}
-          <section className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Projects</h2>
-            <div className="space-y-6">
+          <section className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 shadow-sm">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Projects</h2>
+            <div className="space-y-8">
               {projects.map((project, index) => (
-                <div key={index}>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
+                <div key={index} className="border-b border-gray-100 last:border-b-0 pb-8 last:pb-0">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
                       {project.link && (
                         <a
                           href={project.link}
@@ -259,23 +256,23 @@ export default function ResumePage() {
                           rel="noopener noreferrer"
                           className="text-blue-600 hover:text-blue-800"
                         >
-                          <ExternalLink size={16} />
+                          <ExternalLink size={20} />
                         </a>
                       )}
                     </div>
-                    <div className="text-sm text-gray-600 flex items-center gap-2 mt-1 md:mt-0">
-                      <Calendar size={16} />
-                      <span>{project.period}</span>
+                    <div className="text-gray-600 flex items-center gap-2 mt-2 lg:mt-0">
+                      <Calendar size={18} />
+                      <span className="text-lg">{project.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{project.description}</p>
+                  <p className="text-gray-700 leading-relaxed text-lg">{project.description}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-6 text-center">
+            <div className="mt-10 text-center">
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-lg"
               >
                 View All Projects
                 <span>→</span>
@@ -284,19 +281,19 @@ export default function ResumePage() {
           </section>
 
           {/* Activities */}
-          <section className="bg-white rounded-lg border border-gray-200 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Activities and Organizations</h2>
-            <div className="space-y-6">
+          <section className="bg-white rounded-2xl border border-gray-200 p-10 shadow-sm">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Activities and Organizations</h2>
+            <div className="space-y-8">
               {activities.map((activity, index) => (
-                <div key={index}>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 className="text-lg font-semibold text-gray-900">{activity.title}</h3>
-                    <div className="text-sm text-gray-600 flex items-center gap-2 mt-1 md:mt-0">
-                      <Calendar size={16} />
-                      <span>{activity.period}</span>
+                <div key={index} className="border-b border-gray-100 last:border-b-0 pb-8 last:pb-0">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900">{activity.title}</h3>
+                    <div className="text-gray-600 flex items-center gap-2 mt-2 lg:mt-0">
+                      <Calendar size={18} />
+                      <span className="text-lg">{activity.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700">{activity.description}</p>
+                  <p className="text-gray-700 text-lg">{activity.description}</p>
                 </div>
               ))}
             </div>
@@ -305,4 +302,4 @@ export default function ResumePage() {
       </main>
     </div>
   );
-} 
+}

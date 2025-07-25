@@ -34,4 +34,4 @@ The LZW algorithm builds a dictionary of strings during compression, allowing fo
 
 ## Use Cases
 
-Perfect for understanding compression algorithms and file processing in systems programming. Demonstrates low-level C programming skills and algorithmic thinking. 
+Perfect for understanding compression algorithms and file processing in systems programming. Demonstrates low-level C programming skills and algorithmic thinking.

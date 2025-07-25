@@ -31,4 +31,4 @@ Built entirely in Go without external frameworks, this server showcases:
 
 ## Performance
 
-The server achieves sub-50ms response times and can handle over 100 simultaneous connections efficiently, making it suitable for production use cases requiring high throughput and low latency. 
+The server achieves sub-50ms response times and can handle over 100 simultaneous connections efficiently, making it suitable for production use cases requiring high throughput and low latency.

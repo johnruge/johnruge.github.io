@@ -22,7 +22,7 @@ const projectsDirectory = path.join(process.cwd(), 'content/projects');
 export async function getProjects(): Promise<Project[]> {
   // Get file names under /content/projects
   const fileNames = fs.readdirSync(projectsDirectory);
-  
+
   const allProjectsData = await Promise.all(
     fileNames
       .filter(name => name.endsWith('.md'))
@@ -107,4 +107,4 @@ export async function getFeaturedProjects(): Promise<Project[]> {
 export async function getProjectsByStatus(status: Project['status']): Promise<Project[]> {
   const projects = await getProjects();
   return projects.filter(project => project.status === status);
-} 
+}

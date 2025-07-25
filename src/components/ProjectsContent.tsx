@@ -35,35 +35,35 @@ export default function ProjectsContent({ projects }: ProjectsContentProps) {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
             My Projects
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A collection of software projects I&apos;ve built, ranging from full-stack applications 
-            to system programming and algorithmic implementations. Each project represents 
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            A collection of software projects I&apos;ve built, ranging from full-stack applications
+            to system programming and algorithmic implementations. Each project represents
             a unique challenge and learning experience.
           </p>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4">
             {filters.map((filter) => (
               <button
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+                className={`px-8 py-4 rounded-xl font-medium transition-all duration-300 ${
                   activeFilter === filter.key
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 hover:shadow-md'
                 }`}
               >
                 {filter.label}
-                <span className="ml-2 text-sm opacity-75">
+                <span className="ml-2 opacity-75">
                   ({filter.count})
                 </span>
               </button>
@@ -73,23 +73,23 @@ export default function ProjectsContent({ projects }: ProjectsContentProps) {
       </section>
 
       {/* Projects Grid */}
-      <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredProjects.map((project) => (
                 <ProjectCard key={project.slug} project={project} />
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <div className="text-gray-400 text-6xl mb-4">📂</div>
-              <h3 className="text-xl font-medium text-gray-900 mb-2">
+            <div className="text-center py-20">
+              <div className="text-gray-300 text-8xl mb-8">📂</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 No projects found
               </h3>
-              <p className="text-gray-600">
-                {activeFilter === 'all' 
-                  ? "I haven&apos;t added any projects yet." 
+              <p className="text-xl text-gray-600 max-w-md mx-auto">
+                {activeFilter === 'all'
+                  ? "I haven&apos;t added any projects yet."
                   : `No projects with "${filters.find(f => f.key === activeFilter)?.label}" status.`
                 }
               </p>
@@ -99,17 +99,17 @@ export default function ProjectsContent({ projects }: ProjectsContentProps) {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Interested in Working Together?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
             I&apos;m always excited to take on new challenges and collaborate on interesting projects.
           </p>
           <a
             href="mailto:johnruge@uchicago.edu"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-colors text-lg"
           >
             Let&apos;s Talk
             <span>→</span>
@@ -118,4 +118,4 @@ export default function ProjectsContent({ projects }: ProjectsContentProps) {
       </section>
     </>
   );
-} 
+}

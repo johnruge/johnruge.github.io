@@ -82,4 +82,4 @@ The platform continues to evolve with planned features including:
 - Historical flood pattern analysis
 - Mobile application development
 
-This project demonstrates the power of technology to address real-world community challenges while showcasing full-stack development capabilities in a meaningful social impact context. 
+This project demonstrates the power of technology to address real-world community challenges while showcasing full-stack development capabilities in a meaningful social impact context.
