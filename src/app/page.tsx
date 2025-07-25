@@ -30,10 +30,10 @@ export default async function Home() {
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-8">
               Habari, Karibu!! <br />
-              I'm John Rugemalila / John Ruge ("Roo-geh") <br />
+              I&apos;m John Rugemalila / John Ruge (&quot;Roo-geh&quot;) <br />
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mb-10 mx-auto md:mx-0">
-                I'm a rising junior at the University of Chicago majoring in Computer Science, passionate about
+                I&apos;m a rising junior at the University of Chicago majoring in Computer Science, passionate about
                 Software Engineering. I love building scalable solutions and tackling complex problems. Always
                 eager to learn, collaborate, and create impactful technology.
             </p>
