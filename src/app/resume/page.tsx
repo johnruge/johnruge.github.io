@@ -46,8 +46,8 @@ export default function ResumePage() {
     degree: "B.A. in Computer Science",
     school: "The University of Chicago",
     location: "Chicago, IL",
-    period: "Expected, May 2027",
-    coursework: "Data Structures & Algorithms, Software Development, Computer Systems, Discrete Math"
+    period: "May 2027",
+    coursework: "Data Structures & Algorithms, Software Development, Computer Systems"
   };
 
   const skills = {
@@ -97,29 +97,29 @@ export default function ResumePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <header className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 text-center shadow-sm">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">John Rugemalila</h1>
-            <p className="text-2xl text-gray-600 mb-8">Computer Science Student & Software Developer</p>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">John Rugemalila</h1>
+            <p className="text-xl text-gray-600 mb-8">Computer Science Student & Software Developer</p>
 
             <div className="flex flex-wrap justify-center gap-8 text-gray-600 mb-8">
               <div className="flex items-center gap-2">
-                <Phone size={20} />
-                <span className="text-lg">+1 773-406-6328</span>
+                <Phone size={16} />
+                <span className="text-base">773-406-6328</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail size={20} />
-                <a href="mailto:johnruge@uchicago.edu" className="hover:text-blue-600 text-lg">
-                  johnruge@uchicago.edu
+                <Mail size={16} />
+                <a href="mailto:johnruge@uchicago.edu" className="hover:text-blue-600 text-base">
+                  johnruge [at] uchicago [dot] edu
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <ExternalLink size={20} />
-                <a href="https://linkedin.com/in/john-rugemalila" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 text-lg">
+                <ExternalLink size={16} />
+                <a href="https://linkedin.com/in/john-rugemalila" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 text-base">
                   LinkedIn
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <ExternalLink size={20} />
-                <a href="https://github.com/johnruge" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 text-lg">
+                <ExternalLink size={16} />
+                <a href="https://github.com/johnruge" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 text-base">
                   GitHub
                 </a>
               </div>
@@ -128,33 +128,33 @@ export default function ResumePage() {
             <a
               href="/johnruge_resume.pdf"
               download
-              className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-colors text-lg"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors"
             >
-              <Download size={24} />
+              <Download size={16} />
               Download PDF
             </a>
           </header>
 
           {/* Education */}
           <section className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 shadow-sm">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Education</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Education</h2>
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div className="mb-4 lg:mb-0">
-                  <h3 className="text-2xl font-bold text-gray-900">{education.degree}</h3>
-                  <p className="text-xl text-gray-600 mb-2">{education.school}</p>
-                  <p className="text-gray-500">
+                  <h3 className="text-xl font-bold text-gray-900 italic">{education.degree}</h3>
+                  <p className="text-base text-gray-600 mb-2">{education.school}</p>
+                  <p className="text-gray-500 text-sm">
                     <strong>Relevant coursework:</strong> {education.coursework}
                   </p>
                 </div>
                 <div className="text-gray-600 lg:text-right">
                   <div className="flex items-center gap-2 lg:justify-end mb-2">
-                    <Calendar size={20} />
-                    <span className="text-lg">{education.period}</span>
+                    <Calendar size={16} />
+                    <span className="text-base">{education.period}</span>
                   </div>
                   <div className="flex items-center gap-2 lg:justify-end">
-                    <MapPin size={20} />
-                    <span className="text-lg">{education.location}</span>
+                    <MapPin size={16} />
+                    <span className="text-base">{education.location}</span>
                   </div>
                 </div>
               </div>
@@ -163,33 +163,33 @@ export default function ResumePage() {
 
           {/* Skills */}
           <section className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 shadow-sm">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Skills</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Skills</h2>
             <div className="space-y-10">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Languages</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">Languages</h3>
                 <div className="flex flex-wrap justify-center gap-4">
                   {skills.languages.map((skill) => (
-                    <span key={skill} className="px-4 py-3 bg-blue-50 text-blue-800 border border-blue-200 rounded-xl font-medium text-lg">
+                    <span key={skill} className="px-3 py-2 bg-blue-50 text-blue-800 border border-blue-200 rounded-lg text-sm">
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Frameworks & Libraries</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">Frameworks & Libraries</h3>
                 <div className="flex flex-wrap justify-center gap-4">
                   {skills.frameworks.map((skill) => (
-                    <span key={skill} className="px-4 py-3 bg-green-50 text-green-800 border border-green-200 rounded-xl font-medium text-lg">
+                    <span key={skill} className="px-3 py-2 bg-green-50 text-green-800 border border-green-200 rounded-lg text-sm">
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Tools & Platforms</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">Tools & Platforms</h3>
                 <div className="flex flex-wrap justify-center gap-4">
                   {skills.tools.map((skill) => (
-                    <span key={skill} className="px-4 py-3 bg-purple-50 text-purple-800 border border-purple-200 rounded-xl font-medium text-lg">
+                    <span key={skill} className="px-3 py-2 bg-purple-50 text-purple-800 border border-purple-200 rounded-lg text-sm">
                       {skill}
                     </span>
                   ))}
@@ -200,36 +200,36 @@ export default function ResumePage() {
 
           {/* Experience */}
           <section className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 shadow-sm">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Experience</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Experience</h2>
             <div className="space-y-12">
               {experiences.map((exp, index) => (
                 <div key={index} className="relative pl-8">
                   {index < experiences.length - 1 && (
                     <div className="absolute left-2 top-12 w-px h-full bg-gray-200"></div>
                   )}
-                  <div className="absolute left-0 top-4 w-4 h-4 bg-blue-600 rounded-full"></div>
+                  <div className="absolute left-0 top-4 w-3 h-3 bg-blue-600 rounded-full"></div>
 
                   <div className="mb-6">
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">{exp.title}</h3>
-                        <p className="text-xl text-gray-600 flex items-center gap-2 mt-1">
-                          <Building size={18} />
+                        <h3 className="text-xl font-bold text-gray-900">{exp.title}</h3>
+                        <p className="text-base text-gray-600 flex items-center gap-2 mt-1">
+                          <Building size={16} />
                           {exp.company}
                         </p>
                       </div>
                       <div className="text-gray-600 lg:text-right mt-2 lg:mt-0">
                         <div className="flex items-center gap-2 lg:justify-end mb-1">
-                          <Calendar size={18} />
-                          <span className="text-lg">{exp.period}</span>
+                          <Calendar size={16} />
+                          <span className="text-base">{exp.period}</span>
                         </div>
                         <div className="flex items-center gap-2 lg:justify-end">
-                          <MapPin size={18} />
-                          <span className="text-lg">{exp.location}</span>
+                          <MapPin size={16} />
+                          <span className="text-base">{exp.location}</span>
                         </div>
                       </div>
                     </div>
-                    <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg leading-relaxed ml-4">
+                    <ul className="list-disc list-inside space-y-3 text-gray-700 text-base leading-relaxed ml-4">
                       {exp.description.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
@@ -242,13 +242,13 @@ export default function ResumePage() {
 
           {/* Projects */}
           <section className="bg-white rounded-2xl border border-gray-200 p-10 mb-12 shadow-sm">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Projects</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Projects</h2>
             <div className="space-y-8">
               {projects.map((project, index) => (
                 <div key={index} className="border-b border-gray-100 last:border-b-0 pb-8 last:pb-0">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
+                      <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
                       {project.link && (
                         <a
                           href={project.link}
@@ -256,23 +256,23 @@ export default function ResumePage() {
                           rel="noopener noreferrer"
                           className="text-blue-600 hover:text-blue-800"
                         >
-                          <ExternalLink size={20} />
+                          <ExternalLink size={16} />
                         </a>
                       )}
                     </div>
                     <div className="text-gray-600 flex items-center gap-2 mt-2 lg:mt-0">
-                      <Calendar size={18} />
-                      <span className="text-lg">{project.period}</span>
+                      <Calendar size={16} />
+                      <span className="text-base">{project.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700 leading-relaxed text-lg">{project.description}</p>
+                  <p className="text-gray-700 leading-relaxed text-base">{project.description}</p>
                 </div>
               ))}
             </div>
             <div className="mt-10 text-center">
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-lg"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-base"
               >
                 View All Projects
                 <span>→</span>
@@ -282,18 +282,18 @@ export default function ResumePage() {
 
           {/* Activities */}
           <section className="bg-white rounded-2xl border border-gray-200 p-10 shadow-sm">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Activities and Organizations</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center border-b border-gray-200 pb-4">Activities and Organizations</h2>
             <div className="space-y-8">
               {activities.map((activity, index) => (
                 <div key={index} className="border-b border-gray-100 last:border-b-0 pb-8 last:pb-0">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900">{activity.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{activity.title}</h3>
                     <div className="text-gray-600 flex items-center gap-2 mt-2 lg:mt-0">
-                      <Calendar size={18} />
-                      <span className="text-lg">{activity.period}</span>
+                      <Calendar size={16} />
+                      <span className="text-base">{activity.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700 text-lg">{activity.description}</p>
+                  <p className="text-gray-700 text-base">{activity.description}</p>
                 </div>
               ))}
             </div>

@@ -29,24 +29,24 @@ export default async function Home() {
           </div>
           {/* Hero Description */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-8">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-6">
               Habari, Karibu!! <br />
               I&apos;m John Rugemalila / John Ruge (&quot;Roo-geh&quot;) <br />
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mb-10 mx-auto md:mx-0">
-                I&apos;m a rising junior at the University of Chicago majoring in Computer Science, passionate about
-                Software Engineering. I love building scalable solutions and tackling complex problems. Always
-                eager to learn, collaborate, and create impactful technology.
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-8 mx-auto md:mx-0">
+              I&apos;m a rising junior at the University of Chicago majoring in Computer Science, passionate about
+              Software Engineering. I love building scalable solutions and tackling complex problems. Always
+              eager to learn, collaborate, and create impactful technology.
             </p>
             {/* Contact Info */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-8 text-gray-600 mb-10">
+            <div className="flex flex-wrap justify-center md:justify-start gap-8 text-gray-600 mb-8">
               <div className="flex items-center gap-2">
-                <MapPin size={20} />
-                <span className="text-lg">Chicago, IL</span>
+                <MapPin size={18} />
+                <span className="text-base">Chicago, IL</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar size={20} />
-                <span className="text-lg">Available for opportunities</span>
+                <Calendar size={18} />
+                <span className="text-base">Available for opportunities</span>
               </div>
             </div>
             {/* Action Buttons */}
@@ -99,13 +99,13 @@ export default async function Home() {
       </div>
 
       {/* Featured Projects */}
-      <section id="featured-projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="featured-projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5l font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Featured Projects
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Recent projects I&apos;ve worked on.
             </p>
           </div>

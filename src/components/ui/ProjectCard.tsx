@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Calendar } from 'lucide-react';
 import { Project } from '@/lib/projects';
 
 interface ProjectCardProps {
@@ -39,9 +39,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <div className="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-xl hover:border-gray-300 transition-all duration-300 group h-full flex flex-col">
       {/* Header */}
       <div className="flex justify-between items-start mb-6">
-        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors flex-1 pr-4">
-          {project.title}
-        </h3>
+        <div className="flex-1">
+          <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors pr-4 mb-2">
+            {project.title}
+          </h3>
+          <div className="flex items-center text-gray-600 text-sm">
+            <Calendar size={16} className="mr-2" />
+            {project.date}
+          </div>
+        </div>
         <span className={`px-4 py-2 rounded-full text-sm font-medium border ${getStatusColor(project.status)} whitespace-nowrap`}>
           {getStatusLabel(project.status)}
         </span>

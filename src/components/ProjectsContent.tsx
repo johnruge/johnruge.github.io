@@ -35,31 +35,26 @@ export default function ProjectsContent({ projects }: ProjectsContentProps) {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-6">
             My Projects
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A collection of software projects I&apos;ve built, ranging from full-stack applications
-            to system programming and algorithmic implementations. Each project represents
-            a unique challenge and learning experience.
-          </p>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4">
             {filters.map((filter) => (
               <button
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-8 py-4 rounded-xl font-medium transition-all duration-300 ${
+                className={`px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 ${
                   activeFilter === filter.key
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 hover:shadow-md'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
                 }`}
               >
                 {filter.label}
