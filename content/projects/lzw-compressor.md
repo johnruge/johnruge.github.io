@@ -8,13 +8,5 @@ date: "November 2024"
 featured: false
 ---
 
-# LZW File Compressor
+The LZW File Compressor is a full implementation of the Lempel-Ziv-Welch (LZW) lossless compression algorithm, written in C to deliver efficient and reliable data compression. It supports robust file I/O operations, enabling smooth reading and writing of data during both compression and decompression. The implementation is designed to handle edge cases effectively, including complex recursive decoding scenarios, ensuring accurate restoration of original content. Additionally, it features intelligent error recovery through prefix-based table traversal, allowing it to gracefully manage unknown codes during decoding. This project demonstrates a solid grasp of compression theory, memory management, and fault-tolerant systems programming.
 
-A complete implementation of the Lempel-Ziv-Welch (LZW) compression algorithm in C, providing lossless data compression with robust error handling.
-
-## Key Features
-
-- **Lossless Compression**: Complete LZW algorithm implementation
-- **File I/O**: Efficient file reading and writing operations
-- **Edge Case Handling**: Robust handling of recursive decoding scenarios
-- **Unknown Code Management**: Prefix-based table traversal for error recovery

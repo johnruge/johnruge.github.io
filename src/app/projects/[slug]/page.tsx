@@ -103,6 +103,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {/* Action Links */}
           <div className="flex gap-4 mb-8">
+            {project.github && project.github !== "" && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg text-base hover:bg-gray-800 transition-colors"
+              >
+                <Github size={16} />
+                GitHub
+              </a>
+            )}
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
@@ -111,7 +122,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-base hover:bg-blue-700 transition-colors"
               >
                 <ExternalLink size={16} />
-                Live Demo
+                Live
               </a>
             )}
           </div>

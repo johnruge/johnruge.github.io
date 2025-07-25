@@ -7,15 +7,4 @@ date: "December 2024"
 featured: false
 ---
 
-# Unix Shell
-
-A robust Unix shell implemented in C as part of the CS14400 course, designed to provide a practical understanding of system-level programming and process management.
-
-## Key Features
-
-- **Job Control**: Supports foreground and background job execution
-- **Output Redirection**: Implements `>` and `>+` operators for output redirection, with input validation to prevent file overwrite and enable safe appending
-- **Path Resolution**: Resolves executable paths for external programs
-- **Batch & Interactive Modes**: Can run in both batch mode (from file) and interactive mode (user input)
-- **Built-in Commands**: Includes support for `cd`, `pwd`, and `exit`
-- **External Programs**: Executes external programs using `fork()`, `execvp()`, and `wait()`
+The Unix Shell is a fully functional command-line interpreter built in C as part of the CS14400 course, offering hands-on experience in system-level programming and process control. Designed to mimic core behaviors of traditional Unix shells, it supports job control with foreground and background execution, allowing users to manage multiple processes with ease. The shell features robust output redirection using `>` and `>+`, including safeguards to prevent unintended file overwrites and support for safe appending. It accurately resolves executable paths for running external programs and supports both interactive and batch modes, accommodating a variety of usage scenarios. With built-in commands like `cd`, `pwd`, and `exit`, and full support for launching external programs via `fork()`, `execvp()`, and `wait()`, this project demonstrates a comprehensive understanding of Unix internals, system calls, and user-level process management.

@@ -134,7 +134,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
             {/* Quick Links */}
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+              <h3 className="text-xl font-semibold mb-4 text-black">Quick Links</h3>
               <div className="flex flex-col items-center space-y-2">
                 <Link href="/projects" className="text-gray-600 hover:text-gray-900">Projects</Link>
                 <Link href="/resume" className="text-gray-600 hover:text-gray-900">Resume</Link>
@@ -143,7 +143,7 @@ export default async function Home() {
 
             {/* Connect */}
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4">Connect</h3>
+              <h3 className="text-xl font-semibold mb-4 text-black">Connect</h3>
               <div className="flex justify-center gap-4">
                 <a
                   href="https://github.com/johnruge"
@@ -172,7 +172,7 @@ export default async function Home() {
 
             {/* Built With */}
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4">Built With</h3>
+              <h3 className="text-xl font-semibold mb-4 text-black">Built With</h3>
               <p className="text-gray-600">Next.js & Tailwind CSS</p>
             </div>
           </div>

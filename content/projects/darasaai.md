@@ -8,22 +8,4 @@ date: "June 2025 - Present"
 featured: true
 ---
 
-# DarasaAI
-
-DarasaAI is a comprehensive Learning Management System (LMS) built with Spring Boot, designed to provide robust educational functionality for students.
-
-## Key Features
-
-- **Comprehensive API**: 47 REST endpoints across 10 controllers
-- **Core LMS Functionality**: Assignments, notes, and timed tests
-- **Secure Authentication**: JWT-based authentication with role-based access control
-- **Password Security**: BCrypt password hashing for user data protection
-- **User Management**: Complete user data and access control for teachers, students, and admins
-
-## Technical Implementation
-
-The application follows a monolithic architecture using Spring Boot, providing a solid foundation for educational technology needs. The system implements secure authentication patterns and comprehensive data management capabilities.
-
-## Impact
-
-I plan to use this system to enable educational institutions in Africa to manage their academic content efficiently, providing a centralized platform for course management, student assessment, and educational resource distribution. I am currently working on integrating AI to the application.
+DarasaAI is a full-featured Learning Management System (LMS) built with Spring Boot, designed to serve the academic needs of students and educators. The system delivers a comprehensive suite of educational tools, including assignments, notes, and timed tests, supported by a robust backend architecture. It features a well-structured API with 47 REST endpoints across 10 controllers, enabling seamless interaction with core LMS functionalities. Security is a central focus, with JWT-based authentication, role-based access control, and BCrypt password hashing ensuring that user data remains protected. The platform supports complete user management, allowing differentiated access for teachers, students, and administrators. Built as a monolithic application, DarasaAI offers a stable and scalable foundation for educational environments. My goal is to deploy DarasaAI in educational institutions across Africa, helping them centralize course management, streamline student assessments, and efficiently distribute learning resources. I am currently working on integrating AI capabilities to enhance its functionality and impact even further.

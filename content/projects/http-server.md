@@ -8,15 +8,4 @@ date: "July 2025"
 featured: true
 ---
 
-# HTTP/1.1 Server
-
-A high-performance HTTP/1.1 server implementation built from scratch in Go, demonstrating deep understanding of networking protocols and concurrent programming.
-
-## Key Features
-
-- **HTTP/1.1 Compliance**: Full implementation of HTTP/1.1 protocol specifications
-- **Persistent Connections**: Support for keep-alive connections to improve performance
-- **Static File Serving**: Efficient serving of static assets and files
-- **Custom Route Handling**: Flexible routing system for dynamic content
-- **Concurrent Processing**: Goroutines and channels for handling 100+ simultaneous connections
-- **Sub-50ms Response Time**: Optimized for low-latency responses
+This HTTP/1.1 server is a high-performance implementation built entirely from scratch in Go, showcasing a strong command of networking protocols and concurrent programming. Fully compliant with HTTP/1.1 specifications, the server supports persistent connections through keep-alive, allowing for faster and more efficient communication. It includes optimized static file serving and a flexible routing system for dynamic content, making it suitable for a wide range of web applications. Designed for scalability, the server leverages goroutines and channels to handle over 100 concurrent connections seamlessly. With a focus on speed, it consistently delivers sub-50ms response times, making it both powerful and responsive for real-world use cases.
