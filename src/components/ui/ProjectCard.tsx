@@ -86,7 +86,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <ExternalLink size={18} />
-              <span className="font-medium">Live Demo</span>
+              <span className="font-medium">Live</span>
             </a>
           )}
         </div>

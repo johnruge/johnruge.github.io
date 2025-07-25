@@ -1,16 +1,16 @@
 ---
 title: "DarasaAI"
 description: "Developed a robust monolithic Spring Boot application supporting 47 REST endpoints across 10 controllers, enabling core LMS functionalities including assignments, notes, and timed tests"
-status: "live"
-technologies: ["Java", "Spring Boot", "JWT", "BCrypt", "REST APIs"]
-github: "https://github.com/johnruge/darasaai"
-date: "2025-06-01"
+status: "in-development"
+technologies: ["Java","Spring Boot", "PostgreSQL"]
+github: "https://github.com/johnruge/darasaBackend"
+date: "June 2025 - Present"
 featured: true
 ---
 
 # DarasaAI
 
-DarasaAI is a comprehensive Learning Management System (LMS) built with Spring Boot, designed to provide robust educational functionality for institutions and students.
+DarasaAI is a comprehensive Learning Management System (LMS) built with Spring Boot, designed to provide robust educational functionality for students.
 
 ## Key Features
 
@@ -26,4 +26,4 @@ The application follows a monolithic architecture using Spring Boot, providing a
 
 ## Impact
 
-This system enables educational institutions to manage their academic content efficiently, providing a centralized platform for course management, student assessment, and educational resource distribution.
+I plan to use this system to enable educational institutions in Africa to manage their academic content efficiently, providing a centralized platform for course management, student assessment, and educational resource distribution. I am currently working on integrating AI to the application.

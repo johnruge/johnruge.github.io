@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Linkedin, Mail, MapPin, Calendar } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Calendar, ChevronRight } from 'lucide-react';
 import NavBar from '@/components/ui/NavBar';
 import ProjectCard from '@/components/ui/ProjectCard';
 import { getFeaturedProjects } from '@/lib/projects';
+import SeeFeaturedProjectsButton from '@/components/SeeFeaturedProjectsButton';
 
 export default async function Home() {
   const featuredProjects = await getFeaturedProjects();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <NavBar />
       {/* Hero Section */}
       <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
@@ -52,19 +53,19 @@ export default async function Home() {
             <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-10">
               <Link
                 href="/projects"
-                className="bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors text-lg"
+                className="px-6 py-2 rounded-lg border border-blue-200 bg-white text-blue-700 hover:bg-blue-50 hover:border-blue-300 font-medium text-base shadow-sm transition-all duration-200"
               >
                 View Projects
               </Link>
               <Link
                 href="/resume"
-                className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-medium hover:bg-gray-50 transition-colors text-lg"
+                className="px-6 py-2 rounded-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-300 font-medium text-base shadow-sm transition-all duration-200"
               >
                 View Resume
               </Link>
             </div>
             {/* Social Links */}
-            <div className="flex justify-center md:justify-start gap-6">
+            <div className="flex justify-center md:justify-start gap-6 mb-8">
               <a
                 href="https://github.com/johnruge"
                 target="_blank"
@@ -92,16 +93,20 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* See Featured Projects Button */}
+      <div className="flex justify-center w-full pb-12">
+        <SeeFeaturedProjectsButton />
+      </div>
+
       {/* Featured Projects */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="featured-projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5l font-bold text-gray-900 mb-6">
               Featured Projects
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              My recent work in software development, from full-stack applications
-              to system programming and algorithmic implementations.
+              Recent projects I&apos;ve worked on.
             </p>
           </div>
 
@@ -114,64 +119,68 @@ export default async function Home() {
           <div className="text-center">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors text-lg"
+              className="inline-flex flex-col items-center gap-1 px-6 py-2 rounded-lg border border-blue-200 bg-white text-blue-700 hover:bg-blue-50 hover:border-blue-300 font-medium text-base shadow-sm transition-all duration-200"
             >
-              View All Projects
-              <span>→</span>
+              <span>View All Projects</span>
+              <ChevronRight className="mt-1" size={22} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Skills Preview */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Technical Expertise
-          </h2>
-          <p className="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
-            Technologies and tools I use to bring ideas to life
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              'Java', 'Go', 'Python', 'TypeScript', 'React', 'Next.js',
-              'Spring Boot', 'PostgreSQL', 'MongoDB', 'AWS', 'Docker', 'Git'
-            ].map((skill) => (
-              <div
-                key={skill}
-                className="bg-white border border-gray-200 rounded-xl px-6 py-4 text-lg font-medium text-gray-700 hover:shadow-lg hover:border-gray-300 transition-all duration-300"
-              >
-                {skill}
+      {/* Footer */}
+      <footer className="py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
+            {/* Quick Links */}
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+              <div className="flex flex-col items-center space-y-2">
+                <Link href="/projects" className="text-gray-600 hover:text-gray-900">Projects</Link>
+                <Link href="/resume" className="text-gray-600 hover:text-gray-900">Resume</Link>
               </div>
-            ))}
+            </div>
+
+            {/* Connect */}
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-4">Connect</h3>
+              <div className="flex justify-center gap-4">
+                <a
+                  href="https://github.com/johnruge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  <Github size={24} />
+                </a>
+                <a
+                  href="https://linkedin.com/in/john-rugemalila"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  <Linkedin size={24} />
+                </a>
+                <a
+                  href="mailto:johnruge@uchicago.edu"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  <Mail size={24} />
+                </a>
+              </div>
+            </div>
+
+            {/* Built With */}
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-4">Built With</h3>
+              <p className="text-gray-600">Next.js & Tailwind CSS</p>
+            </div>
           </div>
 
-          <Link
-            href="/resume"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-lg"
-          >
-            View Full Resume
-            <span>→</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">Let&apos;s Build Something Together</h3>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            I&apos;m always interested in new opportunities and collaborations.
-            Feel free to reach out if you&apos;d like to discuss a project or just say hello.
-          </p>
-          <a
-            href="mailto:johnruge@uchicago.edu"
-            className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors text-lg"
-          >
-            <Mail size={24} />
-            Get In Touch
-          </a>
+          {/* Copyright */}
+          <div className="text-center">
+            <p className="text-gray-600">© 2025 John Ruge. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>

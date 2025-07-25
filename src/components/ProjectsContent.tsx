@@ -97,25 +97,6 @@ export default function ProjectsContent({ projects }: ProjectsContentProps) {
           )}
         </div>
       </section>
-
-      {/* Call to Action */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Interested in Working Together?
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            I&apos;m always excited to take on new challenges and collaborate on interesting projects.
-          </p>
-          <a
-            href="mailto:johnruge@uchicago.edu"
-            className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-colors text-lg"
-          >
-            Let&apos;s Talk
-            <span>→</span>
-          </a>
-        </div>
-      </section>
     </>
   );
 }
