@@ -1,9 +1,8 @@
 ---
 title: "Water On My Block"
 description: "A full-stack flood reporting platform empowering South Side Chicago residents to document, visualize, and validate local flooding events"
-status: "live"
+status: "done"
 technologies: ["React", "Node.js", "Express.js", "MongoDB", "AWS"]
-liveUrl: "https://wateronmyblock.com/"
 date: "November 2024 - June 2025"
 featured: true
 ---

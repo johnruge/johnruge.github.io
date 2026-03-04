@@ -8,8 +8,8 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigation = [
-    { name: 'Projects', href: '/projects' },
-    { name: 'Resume', href: '/resume' },
+    { name: 'Projects', href: '/projects', isExternal: false },
+    { name: 'Resume', href: '/johnruge_resume.pdf', isExternal: true },
   ];
 
   return (
@@ -23,13 +23,25 @@ const NavBar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-1">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-normal text-base transition-colors duration-150"
-            >
-              {item.name}
-            </Link>
+            item.isExternal ? (
+              <a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-normal text-base transition-colors duration-150"
+              >
+                {item.name}
+              </a>
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-normal text-base transition-colors duration-150"
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </div>
 
@@ -49,14 +61,27 @@ const NavBar = () => {
         <div className="absolute left-0 top-full mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-md md:hidden">
           <div className="px-4 pt-4 pb-4 space-y-1">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-normal text-base transition-colors duration-150"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
+              item.isExternal ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-normal text-base transition-colors duration-150"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg font-normal text-base transition-colors duration-150"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
         </div>

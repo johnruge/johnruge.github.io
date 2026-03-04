@@ -8,49 +8,19 @@ interface ProjectCardProps {
   project: Project;
 }
 
-const getStatusColor = (status: Project['status']) => {
-  switch (status) {
-    case 'live':
-      return 'bg-green-100 text-green-800 border-green-200';
-    case 'in-development':
-      return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-    case 'done':
-      return 'bg-blue-100 text-blue-800 border-blue-200';
-    default:
-      return 'bg-gray-100 text-gray-800 border-gray-200';
-  }
-};
-
-const getStatusLabel = (status: Project['status']) => {
-  switch (status) {
-    case 'live':
-      return 'Live';
-    case 'in-development':
-      return 'In Development';
-    case 'done':
-      return 'Done';
-    default:
-      return status;
-  }
-};
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-xl hover:border-gray-300 transition-all duration-300 group h-full flex flex-col">
       {/* Header */}
-      <div className="flex justify-between items-start mb-6">
-        <div className="flex-1">
-          <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors pr-4 mb-2">
-            {project.title}
-          </h3>
-          <div className="flex items-center text-gray-600 text-sm">
-            <Calendar size={16} className="mr-2" />
-            {project.date}
-          </div>
+      <div className="mb-6">
+        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
+          {project.title}
+        </h3>
+        <div className="flex items-center text-gray-600 text-sm">
+          <Calendar size={16} className="mr-2" />
+          {project.date}
         </div>
-        <span className={`px-4 py-2 rounded-full text-sm font-medium border ${getStatusColor(project.status)} whitespace-nowrap`}>
-          {getStatusLabel(project.status)}
-        </span>
       </div>
 
       {/* Description */}
@@ -82,17 +52,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             >
               <Github size={18} />
               <span className="font-medium">GitHub</span>
-            </a>
-          )}
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              <ExternalLink size={18} />
-              <span className="font-medium">Live</span>
             </a>
           )}
         </div>

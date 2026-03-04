@@ -1,13 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Linkedin, Mail, MapPin, Calendar, ChevronRight } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Calendar } from 'lucide-react';
 import NavBar from '@/components/ui/NavBar';
-import ProjectCard from '@/components/ui/ProjectCard';
-import { getFeaturedProjects } from '@/lib/projects';
-import SeeFeaturedProjectsButton from '@/components/SeeFeaturedProjectsButton';
 
-export default async function Home() {
-  const featuredProjects = await getFeaturedProjects();
+export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
@@ -34,7 +30,7 @@ export default async function Home() {
               I&apos;m John Rugemalila / John Ruge (&quot;Roo-geh&quot;) <br />
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-8 mx-auto md:mx-0">
-              I&apos;m a rising junior at the University of Chicago majoring in Computer Science, passionate about
+              I&apos;m a junior at the University of Chicago majoring in Computer Science, passionate about
               Software Engineering. I love building scalable solutions and tackling complex problems. Always
               eager to learn, collaborate, and create impactful technology.
             </p>
@@ -57,12 +53,14 @@ export default async function Home() {
               >
                 View Projects
               </Link>
-              <Link
-                href="/resume"
+              <a
+                href="/johnruge_resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-2 rounded-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-300 font-medium text-base shadow-sm transition-all duration-200"
               >
                 View Resume
-              </Link>
+              </a>
             </div>
             {/* Social Links */}
             <div className="flex justify-center md:justify-start gap-6 mb-8">
@@ -93,40 +91,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* See Featured Projects Button */}
-      <div className="flex justify-center w-full pb-12">
-        <SeeFeaturedProjectsButton />
-      </div>
-
-      {/* Featured Projects */}
-      <section id="featured-projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Recent projects I&apos;ve worked on.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/projects"
-              className="inline-flex flex-col items-center gap-1 px-6 py-2 rounded-lg border border-blue-200 bg-white text-blue-700 hover:bg-blue-50 hover:border-blue-300 font-medium text-base shadow-sm transition-all duration-200"
-            >
-              <span>View All Projects</span>
-              <ChevronRight className="mt-1" size={22} />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
@@ -137,7 +101,7 @@ export default async function Home() {
               <h3 className="text-xl font-semibold mb-4 text-black">Quick Links</h3>
               <div className="flex flex-col items-center space-y-2">
                 <Link href="/projects" className="text-gray-600 hover:text-gray-900">Projects</Link>
-                <Link href="/resume" className="text-gray-600 hover:text-gray-900">Resume</Link>
+                <a href="/johnruge_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">Resume</a>
               </div>
             </div>
 

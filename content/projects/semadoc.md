@@ -4,7 +4,7 @@ description: "An in-house AI-powered documentation tool used across 8 teams, red
 status: "done"
 technologies: ["Python", "FastAPI", "MongoDB", "Ollama"]
 github: ""
-date: "June 2025 - Present"
+date: "2025"
 featured: true
 ---
 
