@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfbfa;
+  --foreground: #151515;
+  --muted: #8b8984;
+  --copy: #343331;
+  --line: #e7e3dc;
+  --link: #174f63;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-copy: var(--copy);
+  --color-line: var(--line);
+  --color-link: var(--link);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-ibm-mono);
+  --font-serif: var(--font-libre-serif);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+::selection {
+  background: #d8eef4;
+}
+
+@layer components {
+  .site-main {
+    @apply mx-auto max-w-3xl px-6 pb-24 pt-28 tracking-tight sm:px-8 sm:pt-32;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-muted;
+  }
+
+  .section {
+    @apply mt-14 border-t border-line pt-8;
+  }
+
+  .section-title {
+    @apply mb-6 font-mono text-xs uppercase tracking-[0.18em] text-muted;
+  }
+
+  .page-title {
+    @apply font-serif text-3xl leading-tight tracking-[-0.04em] sm:text-4xl;
+  }
+
+  .page-copy {
+    @apply max-w-3xl text-[17px] leading-7 text-copy;
+  }
+
+  .entry {
+    @apply grid gap-2 sm:grid-cols-[7rem_1fr] sm:gap-6;
+  }
+
+  .entry-date {
+    @apply font-mono text-xs uppercase tracking-[0.14em] text-muted sm:pt-[5px];
+  }
+
+  .entry-title {
+    @apply font-serif text-xl leading-snug tracking-[-0.03em];
+  }
+
+  .entry-meta {
+    @apply text-[15px] leading-6 text-muted;
+  }
+
+  .entry-copy {
+    @apply max-w-3xl break-words text-[15px] leading-6 text-copy;
+  }
+
+  .link-row {
+    @apply flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-[0.18em];
+  }
+
+  .site-link {
+    @apply text-link underline decoration-line hover:decoration-link;
+  }
 }

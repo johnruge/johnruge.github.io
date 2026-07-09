@@ -1,152 +1,68 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Github, Linkedin, Mail, MapPin, Calendar } from 'lucide-react';
-import NavBar from '@/components/ui/NavBar';
+import Nav from "@/components/Nav";
+import { experience, links, profile } from "@/lib/site";
 
 export default function Home() {
-
   return (
-    <div className="min-h-screen bg-white">
-      <NavBar />
-      {/* Hero Section */}
-      <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20">
-          {/* Profile Image */}
-          <div className="flex-shrink-0 w-full md:w-[400px] flex justify-center md:justify-start mb-8 md:mb-0">
-            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-white">
-              <Image
-                src="/john_.jpg"
-                alt="John Rugemalila profile"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-            </div>
-          </div>
-          {/* Hero Description */}
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-6">
-              Habari, Karibu!! <br />
-              I&apos;m John Rugemalila / John Ruge (&quot;Roo-geh&quot;) <br />
+    <div className="min-h-screen bg-background text-foreground">
+      <Nav />
+      <main className="site-main max-w-5xl">
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+          <section className="space-y-5 lg:sticky lg:top-32 lg:self-start">
+            <video
+              src="/video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="short intro video"
+              className="mx-auto w-2/5 rounded-lg border border-line"
+            />
+            <p className="eyebrow">{profile.name}</p>
+            <h1 className="text-2xl leading-tight tracking-[-0.04em] sm:text-3xl">
+              I like building software for products, research, and education.
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-8 mx-auto md:mx-0">
-              I&apos;m a junior at the University of Chicago majoring in Computer Science, passionate about
-              Software Engineering. I love building scalable solutions and tackling complex problems. Always
-              eager to learn, collaborate, and create impactful technology.
-            </p>
-            {/* Contact Info */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-8 text-gray-600 mb-8">
-              <div className="flex items-center gap-2">
-                <MapPin size={18} />
-                <span className="text-base">Chicago, IL</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar size={18} />
-                <span className="text-base">Available for opportunities</span>
-              </div>
+            <div className="space-y-4 text-base leading-7 text-copy">
+              <p>{profile.summary}</p>
+              <p>{profile.note}</p>
             </div>
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-10">
-              <Link
-                href="/projects"
-                className="px-6 py-2 rounded-lg border border-blue-200 bg-white text-blue-700 hover:bg-blue-50 hover:border-blue-300 font-medium text-base shadow-sm transition-all duration-200"
-              >
-                View Projects
-              </Link>
-              <a
-                href="/johnruge_resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 rounded-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-300 font-medium text-base shadow-sm transition-all duration-200"
-              >
-                View Resume
-              </a>
+          </section>
+
+          <section className="border-t border-line pt-8 lg:border-t-0 lg:pt-0">
+            <h2 className="section-title">work</h2>
+            <div className="space-y-6">
+              {experience.map((item) => (
+                <article key={`${item.org}-${item.date}`} className="entry">
+                  <p className="entry-date">{item.date}</p>
+                  <div className="min-w-0 space-y-1">
+                    <h3 className="entry-title">{item.org}</h3>
+                    <p className="entry-meta">
+                      {item.role} / {item.place}
+                    </p>
+                    {item.summary ? (
+                      <p className="entry-copy">{item.summary}</p>
+                    ) : null}
+                  </div>
+                </article>
+              ))}
             </div>
-            {/* Social Links */}
-            <div className="flex justify-center md:justify-start gap-6 mb-8">
-              <a
-                href="https://github.com/johnruge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
-              >
-                <Github size={24} className="text-gray-700" />
-              </a>
-              <a
-                href="https://linkedin.com/in/john-rugemalila"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
-              >
-                <Linkedin size={24} className="text-gray-700" />
-              </a>
-              <a
-                href="mailto:johnruge@uchicago.edu"
-                className="p-4 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
-              >
-                <Mail size={24} className="text-gray-700" />
-              </a>
-            </div>
-          </div>
+          </section>
         </div>
-      </section>
 
-
-      {/* Footer */}
-      <footer className="py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
-            {/* Quick Links */}
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4 text-black">Quick Links</h3>
-              <div className="flex flex-col items-center space-y-2">
-                <Link href="/projects" className="text-gray-600 hover:text-gray-900">Projects</Link>
-                <a href="/johnruge_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">Resume</a>
-              </div>
-            </div>
-
-            {/* Connect */}
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4 text-black">Connect</h3>
-              <div className="flex justify-center gap-4">
-                <a
-                  href="https://github.com/johnruge"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  <Github size={24} />
-                </a>
-                <a
-                  href="https://linkedin.com/in/john-rugemalila"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  <Linkedin size={24} />
-                </a>
-                <a
-                  href="mailto:johnruge@uchicago.edu"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  <Mail size={24} />
-                </a>
-              </div>
-            </div>
-
-            {/* Built With */}
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4 text-black">Built With</h3>
-              <p className="text-gray-600">Next.js & Tailwind CSS</p>
-            </div>
+        <section className="section text-center">
+          <h2 className="section-title">contact</h2>
+          <p className="mb-4 text-sm leading-6 text-copy">
+            Best way to reach me is email.
+          </p>
+          <div className="link-row justify-center">
+            {links.map((link) => (
+              <a key={link.href} href={link.href} className="site-link">
+                {link.label}
+              </a>
+            ))}
           </div>
-
-          {/* Copyright */}
-          <div className="text-center">
-            <p className="text-gray-600">© 2025 John Ruge. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+        </section>
+      </main>
     </div>
   );
 }
