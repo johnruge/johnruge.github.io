@@ -55,11 +55,13 @@ export default function Home() {
             Best way to reach me is email.
           </p>
           <div className="link-row justify-center">
-            {links.map((link) => (
-              <a key={link.href} href={link.href} className="site-link">
-                {link.label}
-              </a>
-            ))}
+            {links
+              .filter((link) => link.label !== "resume")
+              .map((link) => (
+                <a key={link.href} href={link.href} className="site-link">
+                  {link.label}
+                </a>
+              ))}
           </div>
         </section>
       </main>

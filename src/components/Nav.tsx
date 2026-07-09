@@ -10,9 +10,6 @@ export default function Nav() {
         {profile.shortName}
       </Link>
       <nav className="flex flex-row flex-wrap items-center justify-end gap-x-3 gap-y-1 font-mono text-[13px] uppercase tracking-[0.18em] text-muted sm:gap-x-5">
-        <Link href="/" className="hover:text-foreground">
-          about
-        </Link>
         <Link href="/projects" className="hover:underline">
           projects
         </Link>
