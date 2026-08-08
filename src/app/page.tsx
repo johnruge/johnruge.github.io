@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <main className="site-main max-w-6xl pb-8 sm:pt-28">
+      <main className="site-main max-w-6xl pb-6 sm:pt-24">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
           <section className="space-y-5 lg:sticky lg:top-32 lg:self-start">
             <video
@@ -14,7 +14,7 @@ export default function Home() {
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="auto"
               aria-label="short intro video"
               className="mx-auto aspect-square w-2/5 rounded-lg border border-line object-cover"
             />
@@ -29,8 +29,8 @@ export default function Home() {
           </section>
 
           <section className="border-t border-line pt-8 lg:border-t-0 lg:pt-0">
-            <h2 className="section-title">experience</h2>
-            <div className="space-y-4">
+            <h2 className="section-title mb-4">experience</h2>
+            <div className="space-y-3">
               {experience.map((item) => (
                 <article key={`${item.org}-${item.date}`} className="entry">
                   <p className="entry-date">{item.date}</p>
@@ -49,18 +49,20 @@ export default function Home() {
           </section>
         </div>
 
-        <section className="section mt-8 pt-6 text-center">
-          <p className="mb-4 text-sm leading-6 text-copy">
-            Best way to reach me is email.
-          </p>
-          <div className="link-row justify-center">
-            {links
-              .filter((link) => link.label !== "resume")
-              .map((link) => (
-                <a key={link.href} href={link.href} className="site-link">
-                  {link.label}
-                </a>
-              ))}
+        <section className="section mt-6 pt-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <p className="text-sm leading-6 text-copy">
+              Best way to reach me is email.
+            </p>
+            <div className="link-row">
+              {links
+                .filter((link) => link.label !== "resume")
+                .map((link) => (
+                  <a key={link.href} href={link.href} className="site-link">
+                    {link.label}
+                  </a>
+                ))}
+            </div>
           </div>
         </section>
       </main>
