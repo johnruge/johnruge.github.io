@@ -6,7 +6,7 @@
   --muted: #8b8984;
   --copy: #343331;
   --line: #e7e3dc;
-  --link: #174f63;
+  --link: #1a4fd0;
 }
 
 @theme inline {
@@ -86,6 +86,6 @@ a {
   }
 
   .site-link {
-    @apply text-link underline decoration-line hover:decoration-link;
+    @apply text-link underline decoration-link/50 underline-offset-[3px] hover:decoration-link hover:decoration-2;
   }
 }

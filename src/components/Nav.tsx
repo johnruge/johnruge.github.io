@@ -13,9 +13,6 @@ export default function Nav() {
         <Link href="/projects" className="hover:underline">
           projects
         </Link>
-        <Link href="/blog" className="hover:underline">
-          blog
-        </Link>
         <a
           href={resumeLink?.href ?? "/johnruge_resume.pdf"}
           target="_blank"

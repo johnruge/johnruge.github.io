@@ -60,29 +60,48 @@ export const experience = [
   },
 ];
 
+// `href` present means the source is public. Otherwise the entry is labelled
+// "course project" when `course` is set, and "closed source" when it is not.
 export const projects = [
   {
-    name: "DarasaAI",
-    stack: "Java, Spring Boot",
+    name: "CrustyDB",
+    stack: "Rust",
+    course: "CMSC 23500: Database Systems",
     summary:
-      "A learning management backend with REST endpoints for assignments, notes, timed tests, and AI-assisted question generation.",
+      "Built the slotted-page layout and heap-file storage manager for CrustyDB, an academic relational database, along with the aggregate, hash join, and nested-loop join operators in its volcano-style execution engine. Built as part of CMSC 23500: Database Systems.",
   },
   {
-    name: "http-server",
-    stack: "Go",
+    name: "Raft key-value store",
+    stack: "Go, gRPC, Protocol Buffers",
+    course: "CMSC 23380: Distributed Systems",
     summary:
-      "An HTTP/1.1 server with persistent connections, static file serving, custom routing, and concurrent request handling.",
+      "A replicated key-value store built on a from-scratch Raft implementation covering leader election, log replication, and commit-index advancement. Built as part of CMSC 23380: Distributed Systems.",
   },
   {
-    name: "lzw-file-compressor",
-    stack: "C",
+    name: "spotmv",
+    stack: "Python, Spotify Web API",
+    href: "https://github.com/johnruge/spotmv",
     summary:
-      "A lossless Lempel-Ziv-Welch compression and decompression implementation built around careful table traversal and edge cases.",
+      "A command-line tool for bulk playlist surgery: move or collect an artist's tracks across playlists, sort, rename, and inspect. Destructive actions are dry-run unless confirmed.",
   },
   {
     name: "WaterOnMyBlock",
     stack: "React, Node.js, Express, MongoDB",
     summary:
       "A flood reporting tool for collecting structured community reports and validating local flooding events.",
+  },
+  {
+    name: "http-server",
+    stack: "Go",
+    href: "https://github.com/johnruge/http-server-go",
+    summary:
+      "An HTTP/1.1 server built from scratch with persistent connections, static file serving, custom routing, and concurrent request handling.",
+  },
+  {
+    name: "lzw-file-compressor",
+    stack: "C",
+    course: "CMSC 14400: Systems Programming II",
+    summary:
+      "A lossless Lempel-Ziv-Welch compression and decompression implementation. Built as part of CMSC 14400: Systems Programming II.",
   },
 ];

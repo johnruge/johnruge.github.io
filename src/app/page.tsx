@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <main className="site-main max-w-5xl">
-        <div className="grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+      <main className="site-main max-w-6xl pb-8 sm:pt-28">
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
           <section className="space-y-5 lg:sticky lg:top-32 lg:self-start">
             <video
               src="/video.mp4"
@@ -16,7 +16,7 @@ export default function Home() {
               playsInline
               preload="metadata"
               aria-label="short intro video"
-              className="mx-auto w-2/5 rounded-lg border border-line"
+              className="mx-auto aspect-square w-2/5 rounded-lg border border-line object-cover"
             />
             <p className="eyebrow">{profile.name}</p>
             <h1 className="text-2xl leading-tight tracking-[-0.04em] sm:text-3xl">
@@ -29,8 +29,8 @@ export default function Home() {
           </section>
 
           <section className="border-t border-line pt-8 lg:border-t-0 lg:pt-0">
-            <h2 className="section-title">work</h2>
-            <div className="space-y-6">
+            <h2 className="section-title">experience</h2>
+            <div className="space-y-4">
               {experience.map((item) => (
                 <article key={`${item.org}-${item.date}`} className="entry">
                   <p className="entry-date">{item.date}</p>
@@ -49,8 +49,7 @@ export default function Home() {
           </section>
         </div>
 
-        <section className="section text-center">
-          <h2 className="section-title">contact</h2>
+        <section className="section mt-8 pt-6 text-center">
           <p className="mb-4 text-sm leading-6 text-copy">
             Best way to reach me is email.
           </p>
