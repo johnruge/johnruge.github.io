@@ -11,9 +11,12 @@ export default function Projects() {
         </section>
 
         <section className="section">
-          <div className="space-y-6">
+          <div className="divide-y divide-line">
             {projects.map((project) => (
-              <article key={project.name} className="entry">
+              <article
+                key={project.name}
+                className="entry py-6 first:pt-0 last:pb-0"
+              >
                 <p className="entry-date">
                   {project.href ? (
                     <a

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <main className="site-main max-w-6xl pb-6 sm:pt-24">
+      <main className="site-main max-w-6xl pb-4 sm:pt-24">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
           <section className="space-y-5 lg:sticky lg:top-32 lg:self-start">
             <video
@@ -49,7 +49,7 @@ export default function Home() {
           </section>
         </div>
 
-        <section className="section mt-6 pt-5">
+        <section className="section mt-10 pt-7">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <p className="text-sm leading-6 text-copy">
               Best way to reach me is email.
