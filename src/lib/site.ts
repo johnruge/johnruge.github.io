@@ -24,7 +24,7 @@ export const experience = [
     role: "software engineer intern",
     place: "boston",
     summary:
-    "Worked on internal tooling that helped engineering teams build and manage data ingestion pipelines into Snowflake from S3, Kafka, APIs, and data exports."
+      "Built distributed data ingestion infrastructure, developing an async privacy review pipeline that leveraged the ingestion framework to process data and reliably coordinate downstream privacy review.",
   },
   {
     date: "summer 2025",
@@ -33,6 +33,22 @@ export const experience = [
     place: "chicago",
     summary:
       "Built GraphQL data pipelines and caching for pediatric cancer research datasets, reducing response times and repeated API calls.",
+  },
+  {
+    date: "2026",
+    org: "UChicago Booth School of Business",
+    role: "teaching assistant",
+    place: "chicago",
+    summary:
+      "BUSN 32130: Data Analysis with Python and SQL",
+  },
+  {
+    date: "spring 2025",
+    org: "UChicago CS Department",
+    role: "course staff",
+    place: "chicago",
+    summary:
+      "CMSC 23900: Data Visualization",
   },
   {
     date: "March 2024 - May 2026",
@@ -49,14 +65,6 @@ export const experience = [
     place: "chicago",
     summary:
       "https://dl.acm.org/doi/10.1145/3772318.3790503",
-  },
-  {
-    date: "Seasonal",
-    org: "UChicago CS Department",
-    role: "course staff",
-    place: "chicago",
-    summary:
-      "CMSC 23900: Data Visualization",
   },
 ];
 
