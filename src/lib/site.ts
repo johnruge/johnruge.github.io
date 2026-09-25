@@ -7,7 +7,7 @@ export const profile = {
   summary:
     "I’m a rising senior at the University of Chicago majoring in Computer Science, with interests in backend engineering and distributed systems.",
   note:
-    "Recently, I worked at HubSpot building data ingestion infrastructure and internal tools. I’ve also built software for pediatric cancer research and conducted HCI research at the AIR Lab at UChicago.",
+    "Recently, I worked at HubSpot building data ingestion infrastructure. I’ve also built software for pediatric cancer research and conducted HCI research at the AIR Lab at UChicago.",
 };
 
 export const links = [
@@ -17,7 +17,17 @@ export const links = [
   { label: "resume", href: "/johnruge_resume.pdf" },
 ];
 
-export const experience = [
+type ExperienceItem = {
+  date: string;
+  org: string;
+  role?: string;
+  place?: string;
+  summary?: string;
+  // Grouped roles render as compact sub-lines under one heading.
+  items?: { role: string; org: string; detail: string; href?: string }[];
+};
+
+export const experience: ExperienceItem[] = [
   {
     date: "summer 2026",
     org: "HubSpot",
@@ -35,22 +45,6 @@ export const experience = [
       "Built GraphQL data pipelines and caching for pediatric cancer research datasets, reducing response times and repeated API calls.",
   },
   {
-    date: "2026",
-    org: "UChicago Booth School of Business",
-    role: "teaching assistant",
-    place: "chicago",
-    summary:
-      "BUSN 32130: Data Analysis with Python and SQL",
-  },
-  {
-    date: "spring 2025",
-    org: "UChicago CS Department",
-    role: "course staff",
-    place: "chicago",
-    summary:
-      "CMSC 23900: Data Visualization",
-  },
-  {
     date: "March 2024 - May 2026",
     org: "Computer Science Instructional Laboratory",
     role: "software developer",
@@ -59,12 +53,26 @@ export const experience = [
       "Led a team of six in developing SemaDoc, an AI-powered documentation tool, and led a team of five maintaining server operations for the CS Instructional Laboratory.",
   },
   {
-    date: "Seasonal",
-    org: "Amyoli Internet Research Lab",
-    role: "research assistant",
-    place: "chicago",
-    summary:
-      "https://dl.acm.org/doi/10.1145/3772318.3790503",
+    date: "seasonal",
+    org: "Teaching and Research",
+    items: [
+      {
+        role: "research assistant",
+        org: "Amyoli Internet Research Lab (AIR Lab)",
+        detail: "paper",
+        href: "https://dl.acm.org/doi/10.1145/3772318.3790503",
+      },
+      {
+        role: "teaching assistant",
+        org: "UChicago Booth School of Business",
+        detail: "BUSN 32130: Data Analysis with Python and SQL",
+      },
+      {
+        role: "course staff (grading)",
+        org: "UChicago CS Department",
+        detail: "CMSC 23900: Data Visualization",
+      },
+    ],
   },
 ];
 

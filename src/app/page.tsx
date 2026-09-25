@@ -36,12 +36,41 @@ export default function Home() {
                   <p className="entry-date">{item.date}</p>
                   <div className="min-w-0 space-y-1">
                     <h3 className="entry-title">{item.org}</h3>
-                    <p className="entry-meta">
-                      {item.role} / {item.place}
-                    </p>
-                    {item.summary ? (
-                      <p className="entry-copy">{item.summary}</p>
-                    ) : null}
+                    {item.items ? (
+                      <ul className="space-y-1 pt-0.5">
+                        {item.items.map((sub) => (
+                          <li
+                            key={sub.org}
+                            className="text-[15px] leading-6 text-muted"
+                          >
+                            <span className="text-copy">{sub.role}</span> /{" "}
+                            {sub.org}
+                            {" \u00b7 "}
+                            {sub.href ? (
+                              <a
+                                href={sub.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="site-link"
+                              >
+                                {sub.detail}
+                              </a>
+                            ) : (
+                              sub.detail
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <>
+                        <p className="entry-meta">
+                          {item.role} / {item.place}
+                        </p>
+                        {item.summary ? (
+                          <p className="entry-copy">{item.summary}</p>
+                        ) : null}
+                      </>
+                    )}
                   </div>
                 </article>
               ))}
